@@ -16,7 +16,7 @@ class ServoPublisher(Process):
         self.servo_stream = servo_name
         self.machine_id = self.mqtt_config.get("machine", {}).get("machine_id", None)
         self.edge_id = self.mqtt_config.get("machine", {}).get("edge_id", None)
-        self.mqtt_topic = f"humac/telemetry_cnc/{self.edge_id}/servo/{self.name}"
+        self.mqtt_topic = f"humac/telemetry_cnc/indus/{self.edge_id}/servo/{self.name}"
         self.password = None
         self.client = None
 
