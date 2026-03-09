@@ -7,5 +7,5 @@
               {"dev":"/dev/spindle","slave_id":1,"baudrate":9600,"databits":8,"parity":"N","stopbits":1 }             
             ],
     "socket":{"host":"localhost","port":5000},
-    "redis":{"host":"192.168.0.3","port":6379,"db":0}
+    "redis":{"host":"localhost","port":6379,"db":0}
 }
