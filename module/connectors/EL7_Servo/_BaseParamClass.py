@@ -92,7 +92,7 @@ class _BaseParamClass:
 
             setattr(self, self._attr_map[p.code], val)
 
-        self.log.info(f"  -> {len(self.PARAMS)} params mapped")
+        # self.log.info(f"  -> {len(self.PARAMS)} params mapped")
 
     # ── WRITE ──────────────────────────────────────────────
     def write(self, attr_name):
