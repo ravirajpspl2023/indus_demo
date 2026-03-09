@@ -99,12 +99,14 @@ class ServoPublisher(Process):
                                     self.mqtt_topic = f"humac/telemetry_cnc/indus/{self.edge_id}/servo/{self.name}/config"
                                     config_data = json.loads(fields.get('config'))
                                     config_data['ts'] = timestamp
+                                    config_data['edgeid'] = self.edge_id
                                     while not self._publish(config_data):
                                         time.sleep(10)
                                 if fields.get('monitor'):
                                     self.mqtt_topic = f"humac/telemetry_cnc/indus/{self.edge_id}/servo/{self.name}/monitor"
                                     monitor_data = json.loads(fields.get('monitor'))
                                     monitor_data['ts'] = timestamp
+                                    config_data['edgeid'] = self.edge_id
                                     while not self._publish(monitor_data):
                                         time.sleep(10)
                                 self.r.xack(self.servo_stream, self.redis.group_name, msg_id)
