@@ -1,0 +1,45 @@
+from module.connectors.DELTA_C200._BaseGroup import _BaseGroup,ParamDef
+# ═══════════════════════════════════════════════════════════════
+#  GROUP 01 — Basic Parameters  0x0100 ~ 0x012E
+# ═══════════════════════════════════════════════════════════════
+class Group01(_BaseGroup):
+    GROUP_NAME = "Group 01 — Basic Parameters"
+    PARAMS = [
+        ParamDef("Pr01-00","Maximum Output Frequency",         0x0101,16,"R/W",60,   "Hz",  "★"),
+        ParamDef("Pr01-01","Output Frequency of Motor 1",      0x0102,16,"R/W",60,   "Hz"),
+        ParamDef("Pr01-02","Output Voltage of Motor 1",        0x0103,16,"R/W",220,  "V"),
+        ParamDef("Pr01-03","Mid-point Freq 1 of Motor 1",      0x0104,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-04","Mid-point Voltage 1 Motor 1",      0x0105,16,"R/W",0,    "V"),
+        ParamDef("Pr01-05","Mid-point Frequency 2 Motor 1",    0x0106,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-06","Mid-point Voltage 2 Motor 1",      0x0107,16,"R/W",0,    "V"),
+        ParamDef("Pr01-07","Min. Output Frequency Motor 1",    0x0108,16,"R/W",0,    "Hz",  "Max allowed frequency"),
+        ParamDef("Pr01-08","Min. Output Voltage Motor 1",      0x0109,16,"R/W",0,    "Hz",  "Min allowed frequency"),
+        ParamDef("Pr01-09","Start-Up Frequency",               0x010A,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-10","Output Frequency Upper Limit",     0x010B,16,"R/W",0,    "V"),
+        ParamDef("Pr01-11","Output Frequency Lower Limit",     0x010C,16,"R/W",0,    ""),
+        ParamDef("Pr01-12","Accel. Time 1",                    0x010D,16,"R/W",10,   "s",   "★ ×0.01s (write 1000 = 10.00s)"),
+        ParamDef("Pr01-13","Decel. Time 1",                    0x010E,16,"R/W",10,   "s",   "★ ×0.01s"),
+        ParamDef("Pr01-14","Accel. Time 2",                    0x010F,16,"R/W",10,   "s"),
+        ParamDef("Pr01-15","Decel. Time 2",                    0x0110,16,"R/W",10,   "s"),
+        ParamDef("Pr01-16","Accel. Time 3",                    0x0111,16,"R/W",10,   "s"),
+        ParamDef("Pr01-17","Decel. Time 3",                    0x0112,16,"R/W",10,   "s"),
+        ParamDef("Pr01-18","Accel. Time 4",                    0x0113,16,"R/W",10,   "s"),
+        ParamDef("Pr01-19","Decel. Time 4",                    0x0114,16,"R/W",10,   "s"),
+        ParamDef("Pr01-20","JOG Acceleration Time",            0x0115,16,"R/W",10,   "s"),
+        ParamDef("Pr01-21","JOG Deceleration Time",            0x0116,16,"R/W",10,   "s"),
+        ParamDef("Pr01-22","JOG Frequency",                    0x0117,16,"R/W",6,    "Hz",  "★"),
+        ParamDef("Pr01-23","1st/4th Accel./decel. Frequency",  0x0118,16,"R/W",0,   "Hz"),
+        ParamDef("Pr01-24","S-curve Accel Begin",              0x0119,16,"R/W",0,    "s"),
+        ParamDef("Pr01-25","S-curve Accel End",                0x011A,16,"R/W",0,    "s"),
+        ParamDef("Pr01-26","S-curve Decel Begin",              0x011B,16,"R/W",0,    "s"),
+        ParamDef("Pr01-27","S-curve Decel End",                0x011C,16,"R/W",0,    "s"),
+        ParamDef("Pr01-28","Skip Frequency 1 Upper Limit",     0x011D,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-29","Skip Frequency 1 Lower Limit",     0x011E,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-30","Skip Frequency 2 Upper Limit",     0x011F,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-31","Skip Frequency 2 Lower Limit",     0x0120,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-32","Skip Frequency 3 Upper Limit",     0x0121,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-33","Skip Frequency 3 Lower Limit",     0x0122,16,"R/W",0,    "Hz"),
+        ParamDef("Pr01-34","Zero Speed Operation",             0x0123,16,"R/W",0,    ""),
+        ParamDef("Pr01-43","V/F Curve Selection",              0x012C,16,"R/W",0,    ""),
+        ParamDef("Pr01-46","Voltage Recovery Rate",            0x012F,16,"R/W",0,    ""),
+    ]

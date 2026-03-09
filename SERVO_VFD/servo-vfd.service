@@ -1,0 +1,44 @@
+[Unit]
+Description=SERVO_VFD Driver Service
+Documentation=Industrial IoT driver for 3 servo drives and 1 VFD
+After=network.target redis.service
+Wants=redis.service
+
+[Service]
+Type=simple
+User=humac
+Group=humac
+WorkingDirectory=/home/humac/SERVO_VFD
+ExecStart=/usr/bin/python3 main.py
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=false
+Restart=always
+RestartSec=10
+StartLimitInterval=60
+StartLimitBurst=3
+
+# Environment variables
+Environment=PYTHONUNBUFFERED=1
+Environment=LOG_LEVEL=DEBUG
+Environment=PATH=/usr/bin:/usr/local/bin
+
+# Security settings
+NoNewPrivileges=false
+ProtectSystem=false
+ProtectHome=false
+ReadWritePaths=/home/humac/SERVO_VFD
+
+# Device access for USB serial ports
+DeviceAllow=/dev/ttyUSB0 rw
+DeviceAllow=/dev/ttyUSB1 rw
+DeviceAllow=/dev/ttyUSB2 rw
+DeviceAllow=/dev/ttyUSB3 rw
+DeviceAllow=/dev/servoX rw
+DeviceAllow=/dev/servoY rw
+DeviceAllow=/dev/servoZ rw
+DeviceAllow=/dev/spindle rw
+
+[Install]
+WantedBy=multi-user.target
